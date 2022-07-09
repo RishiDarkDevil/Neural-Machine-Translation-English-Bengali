@@ -70,6 +70,13 @@ decoded target example: সত্যি, ব্যাপারটা ও ভা�
 
 The same is done for the the test data, or a sentence, where we encode and pad it to input in the model.
 
+### Output Sequence Selection
+Neural Network is just the way to calculate the conditional probability of the next word that comes in the output sentence given the previous word generated in the output sequence till now and the input sentence in the case of Machine Translation. Now, we can opt for several ways, like Greedy Search, Beam Search, Minimizing Baye's Risk,etc. to find the output sequence with the highest joint probability. Looking for all possible combinations is computationally very expensive. Hence, we resort to heurestic and asymptotically best methods to generate the output sequence with highest probability. 
+We resorted to two ways which are:
+- Greedy Search: Picks the next id with the highest softmax probability. Though it works for short sentences it is not suitable for many cases.
+- Minimum Baye's Risk(MBR): Generates multiple candidate translations. Compare each one of them with all other using a similarity score(in our case ROUGE). Then, choosing the one with the highest similarity score, gives us the candidate translation that is in consensus with all the generated samples.
+
+
 ## Models
 I focussed only on Transformer based architechtures. I changed the Hyperparameters of the Transformer and trained several of these models to compare their performance.
 
