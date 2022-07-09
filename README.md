@@ -80,3 +80,12 @@ I focussed only on Transformer based architechtures. I changed the Hyperparamete
 `Embedding Dimension = 256`|`Embedding Dimension = 256`|
 `Key Dimension = 32`|`Key Dimension = 32`|
 `Value Dimension = 32`| `Value Dimension = 32`| 
+![2L-8H Accuracy](Performance/2L-8H-Acc.png)|-
+![2L-8H Loss](Performance/2L-8H-Loss.png)|-
+BLEU = 0.80|-
+chrF2 = 20.25|-
+TER = 104.46|-
+
+Heads|English|Bengali Translation: MBR Score|Actual Translation
+---|-----|----|--
+8 |I love you.| আমি তোমাকে ভালবাসি।: 0.97, আমি তোমাকে ভালোবাসি।: 0.95|আমি তোমাকে ভালোবাসি।
