@@ -251,3 +251,9 @@ In this Neural Machine Translation from English to Bengali. I have gone through 
 - Model faces issue in discriminating between spellings like ভাল and ভালো.
 
 Hence, we conclude larger models are only helpful, if there is large amount of data available. Exploration of modern State of the Art Transformer Models with larger corpus and availability of proper computatioal resources can highly boost the performance of these Neural Machine Translation Models. Our exploration is highly constrained by time and availabiliy of compuational resources.
+
+## Notebooks Details:
+- `Data-Preparation.ipynb`: Deals with pre-processing and creating the data that was used to train and test the models.
+- `Neural_Machine_Translation_tf_<i>L_<j>H.ipynb`: Deals with the model training and evaluation for i layers, j heads transformer on the smaller dataset.
+- `Neural_Machine_Translation_tf_<i>L_<j>H_BigData.ipynb`: Deals with the model training and evaluation for i layers, j heads transformer on the bigger dataset.
+- `Neural_Machine_Translation_tf_<i>L_<j>H.ipynb`: Deals with the model training and evaluation for i layers, j heads transformer on the smaller dataset.
