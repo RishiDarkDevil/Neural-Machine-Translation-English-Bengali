@@ -76,6 +76,11 @@ We resorted to two ways which are:
 - Greedy Search: Picks the next id with the highest softmax probability. Though it works for short sentences it is not suitable for many cases.
 - Minimum Baye's Risk(MBR): Generates multiple candidate translations. Compare each one of them with all other using a similarity score(in our case ROUGE). Then, choosing the one with the highest similarity score, gives us the candidate translation that is in consensus with all the generated samples.
 
+ROUGE metric | 
+--|
+![ROUGE score](Performance/ROUGE.png)|
+MBR Selection Criterion|
+![MBR select](MBR-Select.png)
 
 ## Models
 I focussed only on Transformer based architechtures. I changed the Hyperparameters of the Transformer and trained several of these models to compare their performance.
