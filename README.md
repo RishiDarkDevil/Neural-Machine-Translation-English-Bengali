@@ -74,23 +74,40 @@ The same is done for the the test data, or a sentence, where we encode and pad i
 I focussed only on Transformer based architechtures. I changed the Hyperparameters of the Transformer and trained several of these models to compare their performance.
 ### 2 Layer Transformer Architechture
 ![](Architectures/model-2L-8H.png)
-4 Heads | 8 Heads
---|--
-`Number of Layers = 2`|`Number of Layers = 2`|
-`Number of Heads = 4`|`Number of Heads = 8`|
-`Embedding Dimension = 256`|`Embedding Dimension = 256`|
-`Key Dimension = 32`|`Key Dimension = 32`|
-`Value Dimension = 32`| `Value Dimension = 32`|
-`Epochs = 10` | `Epochs = 10`|
-`Batch Size = 256` | `Batch Size = 256`|
-![2L-4H Accuracy](Performance/2L-4H-Acc.png)|![2L-8H Accuracy](Performance/2L-8H-Acc.png)
-![2L-4H Loss](Performance/2L-4H-Loss.png)|![2L-8H Loss](Performance/2L-8H-Loss.png)
-BLEU = 0.80|BLEU = 1.07
-chrF2 = 20.25|chrF2 = 20.48
-TER = 107.92|TER = 98.69
 
-Heads|English|Bengali Translation: MBR Score| Reference Translation
+4 Heads | 8 Heads| 8 Heads Big | 8 Heads Dim Mod
+--|--|--|--
+`Number of Layers = 2`|`Number of Layers = 2`|`Number of Layers = 2`|`Number of Layers = 2`|
+`Number of Heads = 4`|`Number of Heads = 8`|`Number of Heads = 4`|`Number of Heads = 8`|
+`Embedding Dimension = 256`|`Embedding Dimension = 256`|`Embedding Dimension = 256`|`Embedding Dimension = 512`|
+`Key Dimension = 32`|`Key Dimension = 32`|`Key Dimension = 32`|`Key Dimension = 64`|
+`Value Dimension = 32`| `Value Dimension = 32`|`Value Dimension = 32`| `Value Dimension = 64`|
+`150000 Parallel Sents`|`150000 Parallel Sents`|`750000 Parallel Sents`|`150000 Parallel Sents`
+`Epochs = 10` | `Epochs = 10+10`|`Epochs = 10(from left)+10`|`150000 Parallel Sents`
+`Batch Size = 256` | `Batch Size = 256`| `Batch Size = 256`| `Batch Size = 256`|
+![2L-4H Accuracy](Performance/2L-4H-Acc.png)|![2L-8H Accuracy](Performance/2L-8H-Acc.png)|![2L-8H-Big Accuracy](Performance/2L-8H-Big-Acc.png)|![2L-8H-64 Accuracy](Performance/2L-8H-64-Acc.png)
+![2L-4H Loss](Performance/2L-4H-Loss.png)|![2L-8H Loss](Performance/2L-8H-Loss.png)|![2L-8H-Big Loss](Performance/2L-8H-Big-Loss.png)|![2L-8H Loss](Performance/2L-8H-64-Loss.png)
+BLEU = 0.80|BLEU = 1.07|BLEU = 2.82|BLEU = 0.06
+chrF2 = 20.25|chrF2 = 20.48|chrF2 = 29.59|chrF2 = 5.04
+TER = 107.92|TER = 98.69|TER = 93.91|TER = 99.45
+
+Heads|English|Bengali Translation: MBR Score(10 samples)| Reference Translation
 ---|-----|----|--
 4 |I love you.| আমি তোমাকে ভালোবাসি।: 0.98, আমি তোমাকে ভালবাসি।: 0.97|আমি তোমাকে ভালোবাসি।
 4 |Thank You!|ধন্যবাদ!: 0.99, ধন্যবাদ তোমার!: 0.72|ধন্যবাদ!
 4 | Modiji is India's Prime Minister. | কিন্তু নরেন্দ্র মোদী সরকার।: 0.81,নরেন্দ্র মোদী সরকারের ভারত।: 0.77 | মোদিজি ভারতের প্রধানমন্ত্রী
+8 | I am tired. |আমি ক্লান্ত হয়ে গেছি।: 0.93, ক্লান্ত হয়ে গেছি।: 0.86| আমি ক্লান্ত
+8 | How are you? |তুমি কেমন আছো?: 0.80, তুমি কেমন আছ?: 0.70| তুমি কেমন আছো
+8 | Hello! | হ্যালো! | হ্যালো!
+8 | Let's start! আসুন শুরু যাক!| চল শুরু করি!
+8 Big|Let's Start!|চলো, শুরু করি!: 0.72, চলো শুরু করছি!: 0.72|চল শুরু করি!
+8 Big|I like Durga Puja very much.|আমি দুর্গা পূজা করতে খুব পছন্দ করি।: 0.76, আমার কাছে দুর্গা পূজা খুব ভাল লাগে।: 0.76, আমি দুর্গা পূজা খুব ভালোবাসি।: 0.75|আমি দুর্গা পূজা করতে খুব পছন্দ করি।
+8 Big| I am hungry|আমি ক্ষুধার্ত।: 0.95, আমার ক্ষুধার্ত।: 0.87|আমি ক্ষুধার্ত।
+8 Dim|I love you.|কিন্তু অপরিবর্তিত থাকতে পেরেছিলেন ঠিক।: 0.52, ১৩ ঈশ্বরের বাক্য বাইবেল জোর নেই।: 0.52| আমি তোমাকে ভালোবাসি।
+8 Dim|I am hungry.|তার সঙ্গে, আমরা কী বলি?: 0.50, আমাদের দিন থেমে যায়।: 0.48| আমি ক্ষুধার্ত।
+
+### 3 Layer Transformer Architechture
+![](Architectures/model-3L-4H.png)
+
+
+
