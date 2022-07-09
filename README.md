@@ -189,3 +189,14 @@ Heads|English|Bengali Translation: MBR Score(10 samples)| Reference Translation
 ---|-----|----|--
 4 |I love you.| কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু|আমি তোমাকে ভালোবাসি।
 4 Big|I love you.|দেশের ছোট সরকারি ওঁকে সামনে।: 0.43, রাস্তায় কোন তেমনটা কোন পেয়েছে পারে কারো এখানে এ গ্রেপ্তারবেন হয় করে সঙ্গে।: 0.43| আমি তোমাকে ভালোবাসি।
+
+## Conclusion
+In this Neural Machine Translation from English to Bengali. I have gone through various aspects and whatever little literature was available. I have explored several Transformer Based architechtures, which were not that much used in the literature. 
+- Model faces issues in fitting when it grows in complexity but has less data avaialbe to train all the parameters.
+- Out of all the models trained starkingly the one with the least complexity seems to perform the best that is the transformer with 1 Layer and 8 Heads. The reason might be due to not that big training data. 
+- The model exposed to larger data performs better than the one exposed to less data.
+- Model trained on larger data is able to translate named entity better, even if it hasn't seen it before in the data.
+- The Model learns associations between words quite well e.g. Modiji is converted to Narendra Modi in translations due to its appearance multiple times in dataset.
+- Larger Models tend to robust to punctuation marks.
+
+Hence, we conclude larger models are only helpful, if there is large amount of data available. Exploration of modern State of the Art Transformer Models with larger corpus and availability of proper computatioal resources can highly boost the performance of these Neural Machine Translation Models. Our exploration is highly constrained by time and availabiliy of compuational resources.
