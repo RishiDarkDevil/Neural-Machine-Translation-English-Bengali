@@ -73,19 +73,24 @@ The same is done for the the test data, or a sentence, where we encode and pad i
 ## Models
 I focussed only on Transformer based architechtures. I changed the Hyperparameters of the Transformer and trained several of these models to compare their performance.
 ### 2 Layer Transformer Architechture
+![](Architectures/model-2L-8H.png)
 4 Heads | 8 Heads
 --|--
 `Number of Layers = 2`|`Number of Layers = 2`|
-`Number of Heads = 8`|`Number of Heads = 4`|
+`Number of Heads = 4`|`Number of Heads = 8`|
 `Embedding Dimension = 256`|`Embedding Dimension = 256`|
 `Key Dimension = 32`|`Key Dimension = 32`|
-`Value Dimension = 32`| `Value Dimension = 32`| 
-![2L-8H Accuracy](Performance/2L-8H-Acc.png)|-
-![2L-8H Loss](Performance/2L-8H-Loss.png)|-
-BLEU = 0.80|-
-chrF2 = 20.25|-
-TER = 104.46|-
+`Value Dimension = 32`| `Value Dimension = 32`|
+`Epochs = 10` | `Epochs = 10`|
+`Batch Size = 256` | `Batch Size = 256`|
+![2L-4H Accuracy](Performance/2L-4H-Acc.png)|![2L-8H Accuracy](Performance/2L-8H-Acc.png)
+![2L-4H Loss](Performance/2L-4H-Loss.png)|![2L-8H Loss](Performance/2L-8H-Loss.png)
+BLEU = 0.80|BLEU = 1.07
+chrF2 = 20.25|chrF2 = 20.48
+TER = 107.92|TER = 98.69
 
-Heads|English|Bengali Translation: MBR Score|Actual Translation
+Heads|English|Bengali Translation: MBR Score| Reference Translation
 ---|-----|----|--
-8 |I love you.| আমি তোমাকে ভালবাসি।: 0.97, আমি তোমাকে ভালোবাসি।: 0.95|আমি তোমাকে ভালোবাসি।
+4 |I love you.| আমি তোমাকে ভালোবাসি।: 0.98, আমি তোমাকে ভালবাসি।: 0.97|আমি তোমাকে ভালোবাসি।
+4 |Thank You!|ধন্যবাদ!: 0.99, ধন্যবাদ তোমার!: 0.72|ধন্যবাদ!
+4 | Modiji is India's Prime Minister. | কিন্তু নরেন্দ্র মোদী সরকার।: 0.81,নরেন্দ্র মোদী সরকারের ভারত।: 0.77 | মোদিজি ভারতের প্রধানমন্ত্রী
