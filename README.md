@@ -86,8 +86,8 @@ I focussed only on Transformer based architechtures. I changed the Hyperparamete
 `154836 Parallel Sents`|`728047 Parallel Sents`
 `Epochs = 10` | `Epochs = 10`|
 `Batch Size = 256` | `Batch Size = 256`
-![1L-8H Accuracy](Performance/1L-8H-Acc.png)|![1L-8H-Big Accuracy](Performance/1L-8H-Big-Acc.png)
-![1L-8H Loss](Performance/1L-8H-Loss.png)|![1L-8H-Big Loss](Performance/1L-8H-Big-Loss.png)
+![1L-8H Accuracy](Performance/1L-8H-Acc.png)|![1L-8H-Big Accuracy](Performance/1L-8H-Big-Loss.png)
+![1L-8H Loss](Performance/1L-8H-Loss.png)|![1L-8H-Big Loss](Performance/1L-8H-Big-Acc.png)
 BLEU = 1.51|BLEU = 3.03
 chrF2 = 25.52|chrF2 = 29.33
 TER = 100.29|TER = 96.24
