@@ -72,6 +72,34 @@ The same is done for the the test data, or a sentence, where we encode and pad i
 
 ## Models
 I focussed only on Transformer based architechtures. I changed the Hyperparameters of the Transformer and trained several of these models to compare their performance.
+
+### 1 Layer Transformer Architechture
+![](Architectures/model-1L-8H.png)
+
+8 Heads | 8 Heads Big
+--|--
+`Number of Layers = 1`|`Number of Layers = 1`
+`Number of Heads = 8`|`Number of Heads = 8`
+`Embedding Dimension = 256`|`Embedding Dimension = 256`
+`Key Dimension = 32`|`Key Dimension = 32`|
+`Value Dimension = 32`| `Value Dimension = 32`
+`154836 Parallel Sents`|`728047 Parallel Sents`
+`Epochs = 10` | `Epochs = 10`|
+`Batch Size = 256` | `Batch Size = 256`
+![1L-8H Accuracy](Performance/1L-8H-Acc.png)|![1L-8H-Big Accuracy](Performance/1L-8H-Big-Acc.png)
+![1L-8H Loss](Performance/1L-8H-Loss.png)|![1L-8H-Big Loss](Performance/1L-8H-Big-Loss.png)
+BLEU = 1.51|BLEU = 3.03
+chrF2 = 25.52|chrF2 = 29.33
+TER = 100.29|TER = 96.24
+
+Heads|English|Bengali Translation: MBR Score(10 samples)| Reference Translation
+---|-----|----|--
+8 |I love you.|তোমায় ভালোবাসি।?: 0.83, আমি তোমায় ভালবাসি।: 0.83|আমি তোমাকে ভালোবাসি।
+8 |How are you.|তুমি কেমন আছ।: 0.93, তুমি কেমন আছ?: 0.89| তুমি কেমন আছো।
+8 |I am hungry.|আমি ক্ষুধার্ত মানুষ।: 0.80, আমি ক্ষুধার্ত।: 0.74| আমি ক্ষুধার্ত।
+8 |I am a boy.|আমি ছেলে।: 0.98, আমি তো ছেলে।: 0.85| আমি ছেলে।
+8 Big | I love you.|ভালোবাসি।': 0.368421052631579, 'আমার সঙ্গে ভালবাসার সম্পর্ক ।': 0.36
+
 ### 2 Layer Transformer Architechture
 ![](Architectures/model-2L-8H.png)
 
@@ -97,7 +125,7 @@ Heads|English|Bengali Translation: MBR Score(10 samples)| Reference Translation
 4 |Thank You!|ধন্যবাদ!: 0.99, ধন্যবাদ তোমার!: 0.72|ধন্যবাদ!
 4 | Modiji is India's Prime Minister. | কিন্তু নরেন্দ্র মোদী সরকার।: 0.81,নরেন্দ্র মোদী সরকারের ভারত।: 0.77 | মোদিজি ভারতের প্রধানমন্ত্রী
 8 | I am tired. |আমি ক্লান্ত হয়ে গেছি।: 0.93, ক্লান্ত হয়ে গেছি।: 0.86| আমি ক্লান্ত
-8 | How are you? |তুমি কেমন আছো?: 0.80, তুমি কেমন আছ?: 0.70| তুমি কেমন আছো
+8 | How are you? |তুমি কেমন আছো?: 0.80, তুমি কেমন আছ?: 0.70| তুমি কেমন আছো?
 8 | Hello! | হ্যালো! | হ্যালো!
 8 | Let's start! আসুন শুরু যাক!| চল শুরু করি!
 8 Big|Let's Start!|চলো, শুরু করি!: 0.72, চলো শুরু করছি!: 0.72|চল শুরু করি!
@@ -109,7 +137,7 @@ Heads|English|Bengali Translation: MBR Score(10 samples)| Reference Translation
 ### 3 Layer Transformer Architechture
 ![](Architectures/model-3L-4H.png)
 
-Hyperparameters: `Number of Layers = 2`,`Number of Heads = 4`, `Embedding Dimension = 256`, `Key Dimension = 32`, `Value Dimension = 32`, `154836 Parallel Sents`, `Epochs = 10` ,`Batch Size = 256`
+Hyperparameters: `Number of Layers = 3`,`Number of Heads = 4`, `Embedding Dimension = 256`, `Key Dimension = 32`, `Value Dimension = 32`, `154836 Parallel Sents`, `Epochs = 10` ,`Batch Size = 256`
 
 Accuracy|Loss
 --|--
@@ -122,3 +150,27 @@ BLEU|chFR2|TER
 Heads|English|Bengali Translation: MBR Score(10 samples)| Reference Translation
 ---|-----|----|--
 4 |I love you.|কলকাতা, নোয়াখালী মতো-এর নিচে পূর্ণ করে তাদের কম কাছে খুশি করা এবং অন্যটি যা বিভিন্ন পরিশ্রম হয়।: 0.37, তারা গোকীতে আমি এই ভূমিকা।: 0.37|আমি তোমাকে ভালোবাসি।
+
+### 4 Layer Transformer Architechture
+![](Architectures/model-4L-4H.png)
+
+4 Heads | 4 Heads Big
+--|--
+`Number of Layers = 4`|`Number of Layers = 4`
+`Number of Heads = 4`|`Number of Heads = 4`
+`Embedding Dimension = 256`|`Embedding Dimension = 256`
+`Key Dimension = 32`|`Key Dimension = 32`|
+`Value Dimension = 32`| `Value Dimension = 32`
+`154836 Parallel Sents`|`728047 Parallel Sents`
+`Epochs = 10` | `Epochs = 10`|
+`Batch Size = 256` | `Batch Size = 256`
+![4L-4H Accuracy](Performance/4L-4H-Acc.png)|![4L-4H-Big Accuracy](Performance/4L-4H-Big-Acc.png)
+![4L-4H Loss](Performance/4L-4H-Loss.png)|![4L-4H-Big Loss](Performance/4L-4H-Big-Loss.png)
+BLEU = 0.00|BLEU = 0.00
+chrF2 = 3.29|chrF2 = 2.18
+TER = 429.87|TER = 100.00
+
+Heads|English|Bengali Translation: MBR Score(10 samples)| Reference Translation
+---|-----|----|--
+4 |I love you.| কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু কিন্তু|আমি তোমাকে ভালোবাসি।
+4 Big|I love you.|দেশের ছোট সরকারি ওঁকে সামনে।: 0.43, রাস্তায় কোন তেমনটা কোন পেয়েছে পারে কারো এখানে এ গ্রেপ্তারবেন হয় করে সঙ্গে।: 0.43| আমি তোমাকে ভালোবাসি।
