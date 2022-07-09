@@ -82,7 +82,7 @@ I focussed only on Transformer based architechtures. I changed the Hyperparamete
 `Embedding Dimension = 256`|`Embedding Dimension = 256`|`Embedding Dimension = 256`|`Embedding Dimension = 512`|
 `Key Dimension = 32`|`Key Dimension = 32`|`Key Dimension = 32`|`Key Dimension = 64`|
 `Value Dimension = 32`| `Value Dimension = 32`|`Value Dimension = 32`| `Value Dimension = 64`|
-`150000 Parallel Sents`|`150000 Parallel Sents`|`750000 Parallel Sents`|`150000 Parallel Sents`
+`154836 Parallel Sents`|`154836 Parallel Sents`|`728047 Parallel Sents`|`154836 Parallel Sents`
 `Epochs = 10` | `Epochs = 20`|`Epochs = pre-trained weights from 8 Heads + 10`|`Epochs = 10`
 `Batch Size = 256` | `Batch Size = 256`| `Batch Size = 256`| `Batch Size = 256`|
 ![2L-4H Accuracy](Performance/2L-4H-Acc.png)|![2L-8H Accuracy](Performance/2L-8H-Acc.png)|![2L-8H-Big Accuracy](Performance/2L-8H-Big-Acc.png)|![2L-8H-64 Accuracy](Performance/2L-8H-64-Acc.png)
@@ -109,21 +109,15 @@ Heads|English|Bengali Translation: MBR Score(10 samples)| Reference Translation
 ### 3 Layer Transformer Architechture
 ![](Architectures/model-3L-4H.png)
 
-4 Heads |
---|
-`Number of Layers = 2`|
-`Number of Heads = 4`|
-`Embedding Dimension = 256`|
-`Key Dimension = 32`|
-`Value Dimension = 32`| 
-`150000 Parallel Sents`|
-`Epochs = 10` | 
-`Batch Size = 256` |
-![3L-4H Accuracy](Performance/3L-4H-Acc.png)|
-![3L-4H Loss](Performance/3L-4H-Loss.png)|
-BLEU = 0.01|
-chrF2 = 2.85|
-TER = 211.89|
+Hyperparameters: `Number of Layers = 2`,`Number of Heads = 4`, `Embedding Dimension = 256`, `Key Dimension = 32`, `Value Dimension = 32`, `154836 Parallel Sents`, `Epochs = 10` ,`Batch Size = 256`
+
+Accuracy|Loss
+--|--
+![3L-4H Accuracy](Performance/3L-4H-Acc.png)|![3L-4H Loss](Performance/3L-4H-Loss.png)|
+
+BLEU|chFR2|TER
+--|--|--
+0.01|2.85|211.89|
 
 Heads|English|Bengali Translation: MBR Score(10 samples)| Reference Translation
 ---|-----|----|--
