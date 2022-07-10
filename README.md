@@ -1,4 +1,5 @@
 # Neural Machine Translation (English to Bengali)
+![](English-Bengali.png)
 ## Introduction
 Language is the heart of communication. There are $\sim7,100$ languages all over the world and hence communication between people belonging to two different cultures and having different languages has always been a challenge. Access to good quality translation as well as requirement has never been so high, which we observe currently. Large number of communications taking place online among people who speak different languages is eased by language technologies like automated machine translation, speech recognition and conversion to native languages, etc.
 
