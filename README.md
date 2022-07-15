@@ -25,8 +25,8 @@ Under these rules, fixed price method for IPOs... |	এতে অভিহিত
 Steps are being taken to introduce rural ratio... |	টিআর ও ভিজিএফ এর পরিবর্তে পল্লী রেশনিং কর্মসূচ...
 I propose to rationalize rates and to introduc... |	উৎস কর: উৎস করে কয়েকটি ক্ষেত্রে করহার যৌক্তিক...
 
-Now, due to computational resource and time constraint training on such a large dataset is impossible. Hence, I opt to use $\sim 1.7\%$ of this massive training data.\
-I also generated a bigger dataset, which is $\sim8\%$ of the entire training data, which is used in training only a few models.
+Now, due to computational resource and time constraint training on such a large dataset is impossible. Hence, I opt to use $\sim 1.7\\%$ of this massive training data.\
+I also generated a bigger dataset, which is $\sim8\\%$ of the entire training data, which is used in training only a few models.
 
 ### Test Data
 Now, the test data on which I evaluate the model performance is a set of $\sim250$ parallel sentences taken from Indic WAT 2021.
