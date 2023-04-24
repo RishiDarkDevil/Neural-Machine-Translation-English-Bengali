@@ -1,5 +1,8 @@
 # Neural Machine Translation (English to Bengali)
-![](English-Bengali.png)
+<p align="center">
+  <img src="English-Bengali.png"/>
+</p>
+
 ## Introduction
 Language is the heart of communication. There are $\sim7,100$ languages all over the world and hence communication between people belonging to two different cultures and having different languages has always been a challenge. Access to good quality translation as well as requirement has never been so high, which we observe currently. Large number of communications taking place online among people who speak different languages is eased by language technologies like automated machine translation, speech recognition and conversion to native languages, etc.
 
@@ -79,15 +82,21 @@ We resorted to two ways which are:
 
 ROUGE metric | 
 --|
-![ROUGE score](Performance/ROUGE.png)|
+<p align="center">
+  <img src="Performance/ROUGE.png"/>
+</p>
 MBR Selection Criterion|
-![MBR select](MBR-Select.png)
+<p align="center">
+  <img src="MBR-Select.png"/>
+</p>
 
 ## Models
 I focussed only on Transformer based architechtures. I changed the Hyperparameters of the Transformer and trained several of these models to compare their performance.
 
 ### 1 Layer Transformer Architechture
-![](Architectures/model-1L-8H.png)
+<p align="center">
+  <img src="Architectures/model-1L-8H.png"/>
+</p>
 
 8 Heads | 8 Heads Big
 --|--
@@ -135,7 +144,9 @@ Do you think it is possible for mere humans to come to know our almighty Creator
 *Due to same failure in saving weights after model training and before manual evaluation of the model generated output for the 8 Heads Big was not done.*
 
 ### 2 Layer Transformer Architechture
-![](Architectures/model-2L-8H.png)
+<p align="center">
+  <img src="Architectures/model-2L-8H.png"/>
+</p>
 
 4 Heads | 8 Heads| 8 Heads Big | 8 Heads Dim Mod
 --|--|--|--
@@ -184,7 +195,9 @@ I just hate feeling helpless.|আমি শুধু অসহায় বো�
 I congratulate the Finance Minister Arun Jaitley Jee for presenting an excellent Budget.|এ নিয়ে বাজেট বক্তৃতায় প্রধানমন্ত্রী নরেন্দ্র মোদীর সঙ্গে বিভিন্ন বাজেটের জন্য শুভেচ্ছা জানাই।|0|0
 
 ### 3 Layer Transformer Architechture
-![](Architectures/model-3L-4H.png)
+<p align="center">
+  <img src="Architectures/model-3L-4H.png"/>
+</p>
 
 Hyperparameters: `Number of Layers = 3`,`Number of Heads = 4`, `Embedding Dimension = 256`, `Key Dimension = 32`, `Value Dimension = 32`, `154836 Parallel Sents`, `Epochs = 10` ,`Batch Size = 256`
 
@@ -204,7 +217,9 @@ Heads|English|Bengali Translation: MBR Score(10 samples)| Reference Translation
 Manual Evaluation of any test data sample gives 0 Adequacy and 0 Fluency
 
 ### 4 Layer Transformer Architechture
-![](Architectures/model-4L-4H.png)
+<p align="center">
+  <img src="Architectures/model-4L-4H.png"/>
+</p>
 
 4 Heads | 4 Heads Big
 --|--
